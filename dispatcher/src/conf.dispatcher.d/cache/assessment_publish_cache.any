@@ -1,0 +1,28 @@
+# Put entries of items you do or don't want to cache in apaches doc root
+# the globbing pattern to be compared against the url
+# example: *             -> everything
+#        : /foo/bar.*    -> only the /foo/bar documents
+#        : /foo/bar/*    -> all pages below /foo/bar
+#        : /foo/bar[./]* -> all pages below and /foo/bar itself
+#        : *.html        -> all .html files
+
+# Default allow all items to cache
+/0000 { /type "allow" /glob "*" }
+
+# Don't cache csrf login tokens
+/0001 { /type "deny" /glob "/libs/granite/csrf/token.json" }
+
+## Don't cache Sling Dynamic Includes snippets
+/0002 { /type "deny" /glob "*.nocache.html*" }
+
+## Don't cache Vanity Urls
+/0003 { /type "deny" /glob "/libs/granite/dispatcher/content/vanityUrls.html" }
+
+## Don't cache AEM Login related Urls
+/0004 { /type "deny" /glob "/libs/granite/core/content/login/*" }
+
+## Don't cache pages under this path
+/0009 { /type "deny" /glob "/content/assessment/us/en/*" }
+
+## Don't cache megamenu experience fragment on the header
+/0009 { /type "deny" /glob "/content/assessment/us/en/*/*/site/header/master.html }

@@ -1,0 +1,10 @@
+// Configuration created by Apache Sling JCR Installer
+{
+  "include-filter.config.enabled":true,
+  "include-filter.config.include-type":"Apache SSI",
+  "include-filter.config.add_comment":true,
+  "include-filter.config.resource-types":[
+    "assessment/components/megamenu"
+  ],
+  "include-filter.config.path":"/content/assessment/us/en"
+}
